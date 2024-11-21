@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId = "com.example.aplicacionwhatsapp"
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -60,5 +60,6 @@ dependencies {
     implementation ("androidx.compose.material3:material3:1.0.0")
     implementation ("androidx.compose.foundation:foundation:1.4.0")
     implementation ("androidx.compose.foundation:foundation-layout:1.4.0")
+    implementation("androidx.navigation:navigation-compose:2.7.3")
     implementation("androidx.navigation:navigation-compose:2.7.3")
 }

@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
+
 import com.example.aplicacionwhatsapp.components.ChatList
 import com.example.aplicacionwhatsapp.components.Tabs
 import com.example.aplicacionwhatsapp.components.TopBar
@@ -19,7 +20,7 @@ fun WhatsAppScreen(navController: NavHostController) {
         content = { paddingValues ->
             Column(modifier = Modifier.padding(paddingValues)) {
                 Tabs()
-                ChatList(navController = navController) // Pasamos NavController
+                ChatList(navController = navController)
             }
         }
     )
