@@ -27,7 +27,7 @@ fun ChatScreen(chatName: String?, navController: NavHostController) {
     ) {
         ChatTopBar(displayName = displayName, navController = navController)
         ChatContent(displayName = displayName)
-        MessageFooter()
+
     }
 }
 
@@ -72,7 +72,7 @@ fun ChatContent(displayName: String) {
         )
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Conversación ficticia
+        // Conversación
         Conversation()
     }
 }
@@ -113,43 +113,4 @@ fun MessageBubble(message: String, isSender: Boolean) {
     }
 }
 
-@Composable
-fun MessageFooter() {
-    var message by remember { mutableStateOf("") }
 
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)
-            .background(Color(0xFFF0F0F0), shape = MaterialTheme.shapes.medium)
-
-    ) {
-        // Campo para escribir mensaje
-        BasicTextField(
-            value = message,
-            onValueChange = { message = it },
-            modifier = Modifier
-                .weight(1f)
-                .padding(8.dp),
-            singleLine = true,
-            textStyle = MaterialTheme.typography.bodyMedium
-        )
-
-        // Botón para enviar mensaje
-        IconButton(
-            onClick = {
-                if (message.isNotEmpty()) {
-                    // Lógica para enviar el mensaje (aún no implementado)
-                    println("Mensaje enviado: $message")
-                    message = ""  // Limpiar campo de texto después de enviar
-                }
-            }
-        ) {
-            Icon(
-                imageVector = Icons.Rounded.ArrowBack,
-                contentDescription = "Enviar",
-                tint = Color(0xFF075E54)
-            )
-        }
-    }
-}
